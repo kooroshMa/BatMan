@@ -17,6 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 object RetrofitModule {
 
+    private const val BASE_URL = "http://www.omdbapi.com"
+
 
 
     @Reusable
@@ -28,7 +30,7 @@ object RetrofitModule {
     @Reusable
     @Provides
     fun providerRetrofit(gsonConverterFactory: GsonConverterFactory): Retrofit {
-        return Retrofit.Builder().baseUrl("")
+        return Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(gsonConverterFactory)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()

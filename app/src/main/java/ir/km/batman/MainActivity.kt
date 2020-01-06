@@ -1,17 +1,21 @@
 package ir.km.batman
 
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.Observer
 import ir.km.batman.databinding.ActivityMainBinding
 import ir.km.batman.viewModel.MainViewModel
 
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
-    override fun getViewModel(): Class<MainViewModel> =  MainViewModel::class.java
+    override fun getViewModel(): Class<MainViewModel> = MainViewModel::class.java
 
     override fun configEvents() {
     }
 
     override fun bindObservables() {
+        viewModel.moviesLiveData.observe(this, Observer {
+        })
     }
 
     override fun initBinding() {
@@ -26,8 +30,6 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         // Example of a call to a native method
         //sample_text.text = stringFromJNI()
     }
-
-
 
 
     /**
