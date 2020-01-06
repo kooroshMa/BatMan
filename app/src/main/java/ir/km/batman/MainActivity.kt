@@ -1,18 +1,34 @@
 package ir.km.batman
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import ir.km.batman.databinding.ActivityMainBinding
+import ir.km.batman.viewModel.MainViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
+
+    override fun getViewModel(): Class<MainViewModel> =  MainViewModel::class.java
+
+    override fun configEvents() {
+    }
+
+    override fun bindObservables() {
+    }
+
+    override fun initBinding() {
+    }
+
+    override fun getLayoutRes(): Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Example of a call to a native method
-        sample_text.text = stringFromJNI()
+        //sample_text.text = stringFromJNI()
     }
+
+
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,

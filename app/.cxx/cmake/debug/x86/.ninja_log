@@ -1,0 +1,5 @@
+# ninja log v5
+1	590	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	173c4738d941750d
+592	727	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so	d6538af8c2851ea2
+3	350	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	173c4738d941750d
+350	452	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so	d6538af8c2851ea2
