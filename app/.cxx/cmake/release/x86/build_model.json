@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN",
+      "sdkFolder": "D:\\dev\\sdk\\android-sdk-essential",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app",
+      "makeFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\src\\main\\cpp\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\.cxx",
+      "cxxFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx",
+      "ndkFolder": "D:\\dev\\sdk\\android-sdk-essential\\ndk-bundle",
+      "ndkVersion": "17.2.4988734",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "release",
+    "soFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\build\\intermediates\\cmake\\release\\lib",
+    "objFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\build\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86",
+  "jsonFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86",
+  "objFolder": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\build\\intermediates\\cmake\\release\\obj\\x86",
+  "buildCommandFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\build_command.txt",
+  "buildOutputFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\build_output.txt",
+  "modelOutputFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\CMakeLists.txt",
+    "toolchainWrapperFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\build_generation_state.json",
+    "cacheKeyFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_key.json",
+    "compilerCacheUseFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cxx\\release\\x86\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\json_generation_record.json",
+  "compileCommandsJsonFile": "D:\\dev\\workspace\\android\\apptech\\BATMAN\\app\\.cxx\\cmake\\release\\x86\\compile_commands.json"
+}

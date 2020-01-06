@@ -1,0 +1,37 @@
+{
+  "ndkFolder": "D:\\dev\\sdk\\android-sdk-essential\\ndk-bundle",
+  "messages": [
+    {
+      "level": "INFO",
+      "message": "android.ndkVersion from module build.gradle is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "ndk.dir in local.properties is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "ANDROID_NDK_HOME environment variable is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "sdkFolder is D:\\dev\\sdk\\android-sdk-essential"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering D:\\dev\\sdk\\android-sdk-essential\\ndk-bundle in SDK ndk-bundle folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering D:\\dev\\sdk\\android-sdk-essential\\ndk\\20.1.5948944 in SDK ndk folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Rejected D:\\dev\\sdk\\android-sdk-essential\\ndk\\20.1.5948944 in SDK ndk folder because that location has no source.properties"
+    },
+    {
+      "level": "INFO",
+      "message": "No user requested version, choosing D:\\dev\\sdk\\android-sdk-essential\\ndk-bundle which is version 17.2.4988734"
+    }
+  ]
+}
