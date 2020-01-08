@@ -27,6 +27,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:transitionName="avatar"
                 android:scaleType="fitXY"
                 android:id="@+id/img_avatar"
                 srcImageUrl="@{item.poster}"

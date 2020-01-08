@@ -5,9 +5,8 @@ import dagger.Binds
 import dagger.Module
 import ir.km.batman.utils.ViewModelFactory
 
-@Module
+@Module(includes = [ViewModelsModule::class])
 abstract class ViewModelFactoryModule {
-
 
     @Binds
     abstract fun viewModel(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

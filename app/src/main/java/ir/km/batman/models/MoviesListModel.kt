@@ -3,6 +3,7 @@ package ir.km.batman.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 @Entity
 class MoviesListModel(
@@ -12,6 +13,6 @@ class MoviesListModel(
     @SerializedName("imdbID") var imbdID: String,
     @SerializedName("Type") var type: String,
     @SerializedName("Poster") var poster: String
-)
+):Serializable
 
 

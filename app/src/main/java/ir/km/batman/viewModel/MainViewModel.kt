@@ -24,6 +24,7 @@ class MainViewModel @Inject constructor(
     }
 
     val moviesLiveData = MutableLiveData<MoviesModel>()
+    val startActivityLiveData = MutableLiveData<MoviesListModel>()
 
     override fun onCleared() {
         super.onCleared()
@@ -64,6 +65,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun onItemClicked(movie: MoviesListModel) {
-        Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.title}]")
+        startActivityLiveData.value = movie
+        //Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.title}]")
     }
 }

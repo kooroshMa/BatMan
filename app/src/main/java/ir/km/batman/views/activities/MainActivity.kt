@@ -1,4 +1,5 @@
 package ir.km.batman.views.activities
+import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.Observer
 import ir.km.batman.R
@@ -20,6 +21,12 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         viewModel.moviesLiveData.observe(this, Observer {
             Log.i("movie" ,it.search.toString())
             binding.adapter?.swapItems(it.search)
+        })
+
+        viewModel.startActivityLiveData.observe(this , Observer {
+            intent = Intent(this , MovieDetailActivity::class.java)
+            intent.putExtra("MovieLisetModel", it)
+            startActivity(intent)
         })
     }
 
