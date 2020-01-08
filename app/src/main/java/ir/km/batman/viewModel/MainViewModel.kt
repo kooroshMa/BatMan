@@ -1,7 +1,6 @@
 package ir.km.batman.viewModel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.disposables.CompositeDisposable
@@ -62,8 +61,4 @@ class MainViewModel @Inject constructor(
                 {
                 }).also { compositDisposable.add(it) }
     }
-
-
-
-
 }

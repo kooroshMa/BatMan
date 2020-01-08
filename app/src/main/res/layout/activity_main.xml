@@ -13,7 +13,7 @@
         
         <variable
             name="adapter"
-            type="ir.km.batman.SingleLayoutAdapter" />
+            type="ir.km.batman.adapter.SingleLayoutAdapter" />
         
     </data>
 

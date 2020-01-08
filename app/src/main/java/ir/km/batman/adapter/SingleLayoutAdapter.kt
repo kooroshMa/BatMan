@@ -1,6 +1,7 @@
-package ir.km.batman
+package ir.km.batman.adapter
 
 import androidx.databinding.ViewDataBinding
+import ir.km.batman.base.BaseAdapter
 import ir.km.batman.viewModel.BaseViewModel
 
 

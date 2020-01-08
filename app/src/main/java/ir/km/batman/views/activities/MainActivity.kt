@@ -1,7 +1,9 @@
-package ir.km.batman
-
+package ir.km.batman.views.activities
 import android.util.Log
 import androidx.lifecycle.Observer
+import ir.km.batman.R
+import ir.km.batman.adapter.SingleLayoutAdapter
+import ir.km.batman.base.BaseActivity
 import ir.km.batman.databinding.ActivityMainBinding
 import ir.km.batman.databinding.ItemMovieBinding
 import ir.km.batman.models.MoviesListModel

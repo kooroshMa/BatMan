@@ -10,7 +10,6 @@ import ir.km.k.di.ViewModelKey
 @Module
 abstract class MainViewModelModule {
 
-
     @Binds
     @IntoMap
     @ViewModelKey(MainViewModel::class)

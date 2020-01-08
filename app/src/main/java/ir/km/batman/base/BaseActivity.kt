@@ -1,4 +1,4 @@
-package ir.km.batman
+package ir.km.batman.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

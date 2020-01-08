@@ -1,4 +1,4 @@
-package ir.km.batman
+package ir.km.batman.base
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

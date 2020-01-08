@@ -1,11 +1,7 @@
 # ninja log v5
-1	576	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
-578	998	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
-2	341	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
-341	464	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
-2	598	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
-598	1140	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
-18	629	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
-629	1229	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
-3	365	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
-365	504	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
+1	357	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
+359	492	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
+3	370	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
+370	504	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2
+2	362	0	CMakeFiles/native-lib.dir/native-lib.cpp.o	e3c8ccbd4cd7232f
+362	509	0	D:/dev/workspace/android/apptech/BATMAN/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	356f0d937b04d4a2

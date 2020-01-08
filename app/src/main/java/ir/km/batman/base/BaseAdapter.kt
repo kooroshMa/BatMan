@@ -1,4 +1,4 @@
-package ir.km.batman
+package ir.km.batman.base
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import ir.km.batman.BR
 import ir.km.batman.viewModel.BaseViewModel
 
 
