@@ -6,16 +6,13 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import ir.km.batman.App
-import ir.km.batman.di.modules.ActivityBuilder
-import ir.km.batman.di.modules.RetrofitModule
-import ir.km.batman.di.modules.RoomModule
-import ir.km.batman.di.modules.ViewModelFactoryModule
+import ir.km.batman.di.modules.*
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [AndroidSupportInjectionModule::class,
-        //RoomModule::class,
+        RoomModule::class,
         RetrofitModule::class,
         ActivityBuilder::class,
         ViewModelFactoryModule::class]

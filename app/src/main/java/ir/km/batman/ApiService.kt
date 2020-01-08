@@ -1,7 +1,7 @@
 package ir.km.batman
 
 import io.reactivex.Flowable
-import ir.km.batman.models.MovieDetailsModel
+import ir.km.batman.models.MoviesListModel
 import ir.km.batman.models.MoviesModel
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -14,5 +14,5 @@ interface ApiService {
 
     @GET("/")
     fun getMovieDetails(@Query("apikey") apikey: Int , @Query("i") i:String):
-            Flowable<MovieDetailsModel>
+            Flowable<MoviesListModel>
 }

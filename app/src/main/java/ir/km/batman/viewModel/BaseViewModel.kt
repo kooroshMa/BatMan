@@ -7,9 +7,8 @@ import androidx.databinding.PropertyChangeRegistry
 import androidx.lifecycle.AndroidViewModel
 import ir.km.batman.BR
 
-
-abstract class BaseViewModel (@NonNull application: Application) : AndroidViewModel(application) ,
-    Observable {
+abstract class BaseViewModel(@NonNull application: Application) :
+    AndroidViewModel(application), Observable {
 
 
     @delegate:Transient
@@ -23,7 +22,9 @@ abstract class BaseViewModel (@NonNull application: Application) : AndroidViewMo
         mCallbacks.remove(callback)
     }
 
-    fun notifyChange(){
-        mCallbacks.notifyChange(this , BR._all)
+    fun notifyChange() {
+        mCallbacks.notifyChange(this, BR._all)
     }
+
+
 }

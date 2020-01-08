@@ -1,13 +1,10 @@
 package ir.km.batman
 
-import android.graphics.Movie
-import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import ir.km.batman.databinding.ActivityMainBinding
 import ir.km.batman.databinding.ItemMovieBinding
-import ir.km.batman.models.MovieDetailsModel
-import ir.km.batman.models.MoviesModel
+import ir.km.batman.models.MoviesListModel
 import ir.km.batman.viewModel.MainViewModel
 
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
@@ -30,7 +27,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             lifecycleOwner = this@MainActivity
             //executePendingBindings()
 
-            adapter = SingleLayoutAdapter<MovieDetailsModel, ItemMovieBinding>(
+            adapter = SingleLayoutAdapter<MoviesListModel, ItemMovieBinding>(
                 R.layout.item_movie,
                 emptyList(),
                 viewModel)

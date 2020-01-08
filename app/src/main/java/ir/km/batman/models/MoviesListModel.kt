@@ -1,0 +1,17 @@
+package ir.km.batman.models
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
+
+@Entity
+class MoviesListModel(
+    @PrimaryKey(autoGenerate = true) @SerializedName("id")var id:Int,
+    @SerializedName("Title") var title: String,
+    @SerializedName("Year") var year: String,
+    @SerializedName("imdbID") var imbdID: String,
+    @SerializedName("Type") var type: String,
+    @SerializedName("Poster") var poster: String
+)
+
+

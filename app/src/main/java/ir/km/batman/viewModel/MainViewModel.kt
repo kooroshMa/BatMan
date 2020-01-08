@@ -1,6 +1,7 @@
 package ir.km.batman.viewModel
 
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.disposables.CompositeDisposable
@@ -12,7 +13,8 @@ import ir.km.batman.models.MoviesModel
 import javax.inject.Inject
 
 
-class MainViewModel @Inject constructor(@NonNull application: App, val appRepository: AppRepository) :
+class MainViewModel @Inject constructor(
+    @NonNull application: App, val appRepository: AppRepository) :
     BaseViewModel(application) {
 
     private val compositDisposable: CompositeDisposable = CompositeDisposable()
@@ -34,12 +36,34 @@ class MainViewModel @Inject constructor(@NonNull application: App, val appReposi
             .onBackpressureLatest()
             .subscribe(
                 {
-                    moviesLiveData.postValue(it)
+                    appRepository.insertMoviesToDb(it)
+                    getMoviesFromDb()
                 },
                 {
+                    if (it.message.toString().contains("Unable to resolve host")){
+                        getMoviesFromDb()
+                    }
                 }
             ).also { compositDisposable.add(it) }
     }
+
+    fun getMoviesFromDb(): Disposable {
+        return appRepository.getMoveisFromDb()
+            .subscribeOn(Schedulers.io())
+            .onBackpressureLatest()
+            .subscribe(
+                {
+                    if(it.isEmpty()){
+                        Log.i("No Connection And Data" , "Please Connect To Internet")
+                    }else{
+                        moviesLiveData.postValue(it[0])
+                    }
+                },
+                {
+                }).also { compositDisposable.add(it) }
+    }
+
+
 
 
 }

@@ -5,14 +5,14 @@ import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 import ir.km.batman.App
+import ir.km.batman.db.BatmanDb
 
 
-//@Module
+@Module
 object RoomModule {
 
-   /* @Reusable
+    @Reusable
     @Provides
-    fun provideDataBase(app: App) : UserDb =
-        Room.databaseBuilder<UserDb>(app , UserDb::class.java , "localDatabase.db").build()*/
-
+    fun provideDataBase(app: App) : BatmanDb =
+        Room.databaseBuilder<BatmanDb>(app , BatmanDb::class.java , "BatmanDatabase.db").build()
 }

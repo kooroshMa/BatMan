@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="ir.km.batman.models.MovieDetailsModel" />
+            type="ir.km.batman.models.MoviesListModel" />
 
         <variable
             name="viewModel"
