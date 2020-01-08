@@ -8,6 +8,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import ir.km.batman.App
 import ir.km.batman.AppRepository
+import ir.km.batman.models.MoviesListModel
 import ir.km.batman.models.MoviesModel
 import javax.inject.Inject
 
@@ -60,5 +61,9 @@ class MainViewModel @Inject constructor(
                 },
                 {
                 }).also { compositDisposable.add(it) }
+    }
+
+    fun onItemClicked(movie: MoviesListModel) {
+        Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.title}]")
     }
 }

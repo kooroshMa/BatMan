@@ -17,17 +17,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="@{() -> viewModel.onItemClicked(item)}"
         android:padding="8dp"
-        app:cardElevation="2dp"
         app:cardCornerRadius="2dp"
-        >
+        app:cardElevation="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
+                android:scaleType="fitXY"
                 android:id="@+id/img_avatar"
+                srcImageUrl="@{item.poster}"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:background="#c3c3c3"
@@ -44,7 +46,7 @@
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/img_avatar"
                 app:layout_constraintTop_toTopOf="@id/img_avatar"
-                tools:text="1" />
+                tools:text="Movie Title" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,8 +54,7 @@
                 android:layout_marginTop="8dp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/txt_number"
-                app:layout_constraintTop_toBottomOf="@id/txt_number"
-                tools:text="Movie Title" />
+                app:layout_constraintTop_toBottomOf="@id/txt_number" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
