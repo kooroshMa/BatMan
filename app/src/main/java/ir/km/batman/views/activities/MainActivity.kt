@@ -1,7 +1,14 @@
 package ir.km.batman.views.activities
+
 import android.content.Intent
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.lifecycle.Observer
+import ir.km.batman.ClickHandleInterface
 import ir.km.batman.R
 import ir.km.batman.adapter.SingleLayoutAdapter
 import ir.km.batman.base.BaseActivity
@@ -19,14 +26,21 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun bindObservables() {
         viewModel.moviesLiveData.observe(this, Observer {
-            Log.i("movie" ,it.search.toString())
             binding.adapter?.swapItems(it.search)
         })
 
-        viewModel.startActivityLiveData.observe(this , Observer {
-            intent = Intent(this , MovieDetailActivity::class.java)
-            intent.putExtra("MovieLisetModel", it)
-            startActivity(intent)
+        viewModel.startActivityLiveData.observe(this, Observer {
+
+
+            /* val imagePair = Pair.create((it.third as View), "avatar")
+             val option =
+                 ActivityOptionsCompat.makeSceneTransitionAnimation(this@MainActivity, imagePair)
+             intent = Intent(this, MovieDetailActivity::class.java)
+             intent.putExtra("MovieLisetModel", it.first)
+             ActivityCompat.startActivity(this@MainActivity, intent, option.toBundle())*/
+
+
+            //startActivity(intent)
         })
     }
 
@@ -35,16 +49,31 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             vm = viewModel
             lifecycleOwner = this@MainActivity
             //executePendingBindings()
-
             adapter = SingleLayoutAdapter<MoviesListModel, ItemMovieBinding>(
                 R.layout.item_movie,
                 emptyList(),
-                viewModel)
+                viewModel,
+                onBind = {
+                    position = it
+                },
+                clickHandleInterface = object : ClickHandleInterface {
+                    override fun click(imageView: ImageView) {
+                        val imagePair = Pair.create((imageView as View), "avatar")
+                        val option =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(
+                                this@MainActivity,
+                                imagePair
+                            )
+                        intent = Intent(this@MainActivity, MovieDetailActivity::class.java)
+                        //intent.putExtra("MovieLisetModel", it.first)
+                        ActivityCompat.startActivity(this@MainActivity, intent, option.toBundle())
+                    }
+                }
+            )
         }
     }
 
     override fun getLayoutRes(): Int = R.layout.activity_main
-
 
 
     /**
@@ -60,4 +89,5 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             System.loadLibrary("native-lib")
         }
     }
+
 }

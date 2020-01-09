@@ -2,12 +2,11 @@ package ir.km.batman.models
 
 import androidx.room.*
 import com.google.gson.annotations.SerializedName
-import ir.km.batman.utils.MoviesTypeConverters
-import java.lang.reflect.Constructor
+import ir.km.batman.utils.TypeConverter
 
 
 @Entity
-@TypeConverters(MoviesTypeConverters::class)
+@TypeConverters(TypeConverter::class)
 class MoviesModel(
     @PrimaryKey(autoGenerate = true)@SerializedName("id") var id: Int,
     @SerializedName("Search") var search: List<MoviesListModel>,

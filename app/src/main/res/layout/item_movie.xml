@@ -11,13 +11,21 @@
         <variable
             name="viewModel"
             type="ir.km.batman.viewModel.MainViewModel" />
+
+        <variable
+            name="position"
+            type="int"/>
+
+        <variable
+            name="imageView"
+            type="android.widget.ImageView" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:onClick="@{() -> viewModel.onItemClicked(item)}"
+        android:onClick="@{() -> viewModel.onItemClicked(item , position, imageView)}"
         android:padding="8dp"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp">
@@ -29,7 +37,7 @@
             <ImageView
                 android:transitionName="avatar"
                 android:scaleType="fitXY"
-                android:id="@+id/img_avatar"
+                android:id="@+id/imgAvatar"
                 srcImageUrl="@{item.poster}"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -45,8 +53,8 @@
                 android:text="@{item.title.toString()}"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@id/img_avatar"
-                app:layout_constraintTop_toTopOf="@id/img_avatar"
+                app:layout_constraintLeft_toRightOf="@id/imgAvatar"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
                 tools:text="Movie Title" />
 
             <TextView

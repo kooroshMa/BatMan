@@ -1,12 +1,14 @@
 package ir.km.batman.base
 
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerAppCompatActivity
+import ir.km.batman.models.MoviesListModel
 import javax.inject.Inject
 
 abstract class BaseActivity<VM : ViewModel, DB : ViewDataBinding> : DaggerAppCompatActivity() {
@@ -20,7 +22,8 @@ abstract class BaseActivity<VM : ViewModel, DB : ViewDataBinding> : DaggerAppCom
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel=ViewModelProvider(this, viewModelFactory).get(getViewModel())
+
+        viewModel = ViewModelProvider(this, viewModelFactory).get(getViewModel())
 
         initBinding()
         configEvents()

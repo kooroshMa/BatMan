@@ -1,7 +1,14 @@
 package ir.km.batman.viewModel
 
+import android.content.Intent
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.annotation.NonNull
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -10,6 +17,8 @@ import ir.km.batman.App
 import ir.km.batman.AppRepository
 import ir.km.batman.models.MoviesListModel
 import ir.km.batman.models.MoviesModel
+import ir.km.batman.views.activities.MovieDetailActivity
+import kotlinx.android.synthetic.main.item_movie.*
 import javax.inject.Inject
 
 
@@ -19,12 +28,14 @@ class MainViewModel @Inject constructor(
 
     private val compositDisposable: CompositeDisposable = CompositeDisposable()
 
+
     init {
         getMovies()
     }
 
     val moviesLiveData = MutableLiveData<MoviesModel>()
-    val startActivityLiveData = MutableLiveData<MoviesListModel>()
+    //val startActivityLiveData = MutableLiveData<Pair<MoviesListModel , Int>>()
+    val startActivityLiveData = MutableLiveData<Triple<MoviesListModel , Int, ImageView>>()
 
     override fun onCleared() {
         super.onCleared()
@@ -41,6 +52,7 @@ class MainViewModel @Inject constructor(
                     getMoviesFromDb()
                 },
                 {
+
                     if (it.message.toString().contains("Unable to resolve host")){
                         getMoviesFromDb()
                     }
@@ -64,8 +76,12 @@ class MainViewModel @Inject constructor(
                 }).also { compositDisposable.add(it) }
     }
 
-    fun onItemClicked(movie: MoviesListModel) {
-        startActivityLiveData.value = movie
-        //Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.title}]")
+    fun onItemClicked(movie: MoviesListModel , position:Int , imageView: ImageView) {
+        val triple = Triple(movie , position, imageView)
+        //startActivityLiveData.value = triple
+      /*  val imagePair = Pair.create(movie, position)
+        startActivityLiveData.value = imagePair*/
+        Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.imbdID}]")
+        Log.d("clickclick", "onItemClicked() called  with: movie = [${position}]")
     }
 }

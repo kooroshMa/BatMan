@@ -2,6 +2,8 @@ package ir.km.batman
 
 import io.reactivex.Flowable
 import ir.km.batman.db.BatmanDb
+import ir.km.batman.models.MovieDetailModel
+import ir.km.batman.models.MoviesListModel
 import ir.km.batman.models.MoviesModel
 import javax.inject.Inject
 
@@ -16,7 +18,13 @@ class AppRepository @Inject constructor(private val apiService: ApiService , pri
 
     fun insertMoviesToDb(moviesModel: MoviesModel) = batmanDb.movieDao().insertMovie(moviesModel)
 
+    fun getMovieDetail(movieListModel: MoviesListModel): Flowable<MovieDetailModel> =
+        apiService.getMovieDetails(apikey,movieListModel.imbdID)
 
+    fun insertMovieDetailsToDb(movieDetailModel: MovieDetailModel) = batmanDb.movieDao()
+        .insertMovieDetails(movieDetailModel)
+
+    fun getMovieDetailsFromDb():Flowable<List<MovieDetailModel>> = batmanDb.movieDao().getMovieDetail()
    /*
     fun insertUsersToDb(userModel: List<UserModel>) = userDb.userDao().insert(userModel)
  */
