@@ -8,6 +8,7 @@ import ir.km.batman.app.GlideApp
 import ir.km.batman.base.BaseActivity
 import ir.km.batman.databinding.ActivityMovieDetailBinding
 import ir.km.batman.models.MoviesListModel
+import ir.km.batman.utils.BindingAdapter
 import ir.km.batman.viewModel.MovieDetailViewModel
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
@@ -32,9 +33,9 @@ class MovieDetailActivity : BaseActivity<MovieDetailViewModel , ActivityMovieDet
         binding.apply {
             vm = viewModel
             moviesListModel= binding.vm?.getExtra(intent.getSerializableExtra("MovieListModel")as? MoviesListModel)
-                Glide.with(this@MovieDetailActivity)
-                    .load(moviesListModel?.poster)
-                    .into(imgAvatarDetail)
+
+            BindingAdapter.setImageSrc(imgAvatarDetail, moviesListModel?.poster)
+
             lifecycleOwner = this@MovieDetailActivity
         }
     }
