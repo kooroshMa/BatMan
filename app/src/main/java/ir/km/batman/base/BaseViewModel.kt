@@ -1,4 +1,4 @@
-package ir.km.batman.viewModel
+package ir.km.batman.base
 
 import android.app.Application
 import androidx.annotation.NonNull

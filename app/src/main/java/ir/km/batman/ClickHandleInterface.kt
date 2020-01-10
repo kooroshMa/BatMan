@@ -1,7 +1,7 @@
 package ir.km.batman
 
-import android.widget.ImageView
+import android.view.View
 
-interface ClickHandleInterface {
-    fun click(imageView: ImageView)
+interface ClickHandleInterface<T> {
+    fun click(view: View, items: List<T>, position:Int)
 }

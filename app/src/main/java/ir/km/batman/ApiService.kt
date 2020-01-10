@@ -14,7 +14,7 @@ interface ApiService {
             Flowable<MoviesModel>
 
     @GET("/")
-    fun getMovieDetails(@Query("apikey") apikey: String , @Query("i") imdbID:String):
+    fun getMovieDetails(@Query("apikey") apikey: String , @Query("i") imdbID:String?):
             Flowable<MovieDetailModel>
 
 }

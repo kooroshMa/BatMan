@@ -2,7 +2,6 @@ package ir.km.batman.base
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import ir.km.batman.viewModel.BaseViewModel
 
 class BaseViewHolder<in T, out B : ViewDataBinding>(val binding: B) : RecyclerView.ViewHolder(binding.root) {
 

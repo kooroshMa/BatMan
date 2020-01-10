@@ -1,7 +1,6 @@
 package ir.km.batman.views.activities
 
 import android.content.Intent
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.app.ActivityCompat
@@ -56,16 +55,16 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                 onBind = {
                     position = it
                 },
-                clickHandleInterface = object : ClickHandleInterface {
-                    override fun click(imageView: ImageView) {
-                        val imagePair = Pair.create((imageView as View), "avatar")
+                clickHandleInterface = object : ClickHandleInterface<MoviesListModel> {
+                    override fun click(view: View, items: List<MoviesListModel> , position:Int) {
+                        val imagePair = Pair.create(view, "avatar")
                         val option =
                             ActivityOptionsCompat.makeSceneTransitionAnimation(
                                 this@MainActivity,
                                 imagePair
                             )
                         intent = Intent(this@MainActivity, MovieDetailActivity::class.java)
-                        //intent.putExtra("MovieLisetModel", it.first)
+                        intent.putExtra("MovieListModel", items[position])
                         ActivityCompat.startActivity(this@MainActivity, intent, option.toBundle())
                     }
                 }

@@ -1,17 +1,13 @@
 package ir.km.batman.base
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ir.km.batman.BR
-import ir.km.batman.viewModel.BaseViewModel
-import kotlinx.android.synthetic.main.item_movie.view.*
 
 
 abstract class BaseAdapter<T, B : ViewDataBinding>(
@@ -41,11 +37,6 @@ abstract class BaseAdapter<T, B : ViewDataBinding>(
     override fun onBindViewHolder(holder: BaseViewHolder<T, B>, position: Int) {
         holder.bind(itemBindingId, getItem(position), viewModelBindingId, viewModel)
         holder.binding.onBind(position)
-
-        holder.itemView.setOnClickListener(View.OnClickListener {
-
-
-        })
     }
 
     open fun swapItems(newItems: List<T>) {

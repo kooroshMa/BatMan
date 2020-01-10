@@ -8,6 +8,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import ir.km.batman.App
 import ir.km.batman.AppRepository
+import ir.km.batman.base.BaseViewModel
 import ir.km.batman.models.MovieDetailModel
 import ir.km.batman.models.MoviesListModel
 import javax.inject.Inject
@@ -17,11 +18,8 @@ class MovieDetailViewModel @Inject constructor(
 ) : BaseViewModel(application) {
 
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
-    private lateinit var moviesListModel: MoviesListModel
+    private var moviesListModel: MoviesListModel? = null
 
-
-    init {
-    }
 
     val movieDetailsLiveData = MutableLiveData<MovieDetailModel>()
 
@@ -30,10 +28,9 @@ class MovieDetailViewModel @Inject constructor(
         compositeDisposable.clear()
     }
 
-    fun getExtra(moviesListModel: MoviesListModel): MoviesListModel {
+    fun getExtra(moviesListModel: MoviesListModel?): MoviesListModel? {
         this.moviesListModel = moviesListModel
         getMovieDetail()
-
         return moviesListModel
     }
 
@@ -43,11 +40,12 @@ class MovieDetailViewModel @Inject constructor(
             .onBackpressureLatest().subscribe(
                 {
                     appRepository.insertMovieDetailsToDb(it)
-                    //getMovieDetailsFromDb()
+                    getMovieDetailsFromDb()
                 },
                 {
+
                     if (it.message.toString().contains("Unable to resolve host")) {
-                        //getMovieDetailsFromDb()
+                        getMovieDetailsFromDb()
                     }
                 }).also { compositeDisposable.add(it) }
     }

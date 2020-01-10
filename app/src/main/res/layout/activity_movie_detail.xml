@@ -10,7 +10,7 @@
 
         <variable
             name="item"
-            type="ir.km.batman.models.MoviesListModel" />
+            type="ir.km.batman.models.MovieDetailModel" />
 
     </data>
 
@@ -57,7 +57,6 @@
                 </ImageView>
 
                 <ImageView
-                    android:src="@drawable/abc_vector_test"
                     android:id="@+id/imgAvatarDetail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

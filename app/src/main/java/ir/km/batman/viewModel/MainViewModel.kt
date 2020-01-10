@@ -15,6 +15,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import ir.km.batman.App
 import ir.km.batman.AppRepository
+import ir.km.batman.base.BaseViewModel
 import ir.km.batman.models.MoviesListModel
 import ir.km.batman.models.MoviesModel
 import ir.km.batman.views.activities.MovieDetailActivity
