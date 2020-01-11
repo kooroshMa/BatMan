@@ -77,12 +77,4 @@ class MainViewModel @Inject constructor(
                 }).also { compositDisposable.add(it) }
     }
 
-    fun onItemClicked(movie: MoviesListModel , position:Int , imageView: ImageView) {
-        val triple = Triple(movie , position, imageView)
-        //startActivityLiveData.value = triple
-      /*  val imagePair = Pair.create(movie, position)
-        startActivityLiveData.value = imagePair*/
-        Log.d("clickclick", "onItemClicked() called  with: movie = [${movie.imbdID}]")
-        Log.d("clickclick", "onItemClicked() called  with: movie = [${position}]")
-    }
 }

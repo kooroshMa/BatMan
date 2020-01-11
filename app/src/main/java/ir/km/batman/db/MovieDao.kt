@@ -20,6 +20,6 @@ interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMovieDetails(moviesDetailModel: MovieDetailModel)
 
-    @Query("Select * from MovieDetailModel")
-    fun getMovieDetail(): Flowable<List<MovieDetailModel>>
+    @Query("Select * from MovieDetailModel WHERE imdbID = :imdbID ")
+    fun getMovieDetail(imdbID:String?): Flowable<List<MovieDetailModel>>
 }

@@ -10,8 +10,7 @@ import ir.km.batman.utils.TypeConverter
 
 @Entity
 @TypeConverters(TypeConverter::class)
-class MovieDetailModel(@PrimaryKey(autoGenerate = true)@SerializedName("id")val id:Int,
-                       @SerializedName("Title") val title:String,
+class MovieDetailModel(@PrimaryKey @SerializedName("Title") val title:String,
                        @SerializedName("Year")val year:String,
                        @SerializedName("Rated")val rated:String,
                        @SerializedName("Released")val released:String,

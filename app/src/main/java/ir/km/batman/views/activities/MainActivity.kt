@@ -58,11 +58,8 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                 clickHandleInterface = object : ClickHandleInterface<MoviesListModel> {
                     override fun click(view: View, items: List<MoviesListModel> , position:Int) {
                         val imagePair = Pair.create(view, "avatar")
-                        val option =
-                            ActivityOptionsCompat.makeSceneTransitionAnimation(
-                                this@MainActivity,
-                                imagePair
-                            )
+                        val option = ActivityOptionsCompat
+                            .makeSceneTransitionAnimation(this@MainActivity, imagePair)
                         intent = Intent(this@MainActivity, MovieDetailActivity::class.java)
                         intent.putExtra("MovieListModel", items[position])
                         ActivityCompat.startActivity(this@MainActivity, intent, option.toBundle())

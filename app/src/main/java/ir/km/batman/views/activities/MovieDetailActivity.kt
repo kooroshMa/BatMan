@@ -2,20 +2,17 @@ package ir.km.batman.views.activities
 
 import android.util.Log
 import androidx.lifecycle.Observer
-import com.bumptech.glide.Glide
 import ir.km.batman.R
-import ir.km.batman.app.GlideApp
 import ir.km.batman.base.BaseActivity
 import ir.km.batman.databinding.ActivityMovieDetailBinding
 import ir.km.batman.models.MoviesListModel
 import ir.km.batman.utils.BindingAdapter
 import ir.km.batman.viewModel.MovieDetailViewModel
-import kotlinx.android.synthetic.main.activity_movie_detail.*
 
-class MovieDetailActivity : BaseActivity<MovieDetailViewModel , ActivityMovieDetailBinding>() {
+class MovieDetailActivity : BaseActivity<MovieDetailViewModel, ActivityMovieDetailBinding>() {
 
 
-    var moviesListModel:MoviesListModel? = null
+    var moviesListModel: MoviesListModel? = null
 
     override fun getViewModel(): Class<MovieDetailViewModel> = MovieDetailViewModel::class.java
 
@@ -23,16 +20,22 @@ class MovieDetailActivity : BaseActivity<MovieDetailViewModel , ActivityMovieDet
     }
 
     override fun bindObservables() {
-        viewModel.movieDetailsLiveData.observe(this , Observer {
-            Log.i("movie" ,it.poster)
+        viewModel.movieDetailsLiveData.observe(this, Observer {
+            Log.i("movie", it.poster)
 
+            binding.title.text = it.title
+            binding.genre.text = it.genre
+            binding.rating.text = it.rated
+            binding.year.text = it.year
         })
     }
 
     override fun initBinding() {
         binding.apply {
             vm = viewModel
-            moviesListModel= binding.vm?.getExtra(intent.getSerializableExtra("MovieListModel")as? MoviesListModel)
+            moviesListModel = intent.getSerializableExtra("MovieListModel") as? MoviesListModel
+            binding.vm?.getExtra(moviesListModel)
+
 
             BindingAdapter.setImageSrc(imgAvatarDetail, moviesListModel?.poster)
 

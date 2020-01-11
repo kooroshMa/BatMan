@@ -24,6 +24,6 @@ class AppRepository @Inject constructor(private val apiService: ApiService , pri
     fun insertMovieDetailsToDb(movieDetailModel: MovieDetailModel) = batmanDb.movieDao()
         .insertMovieDetails(movieDetailModel)
 
-    fun getMovieDetailsFromDb():Flowable<List<MovieDetailModel>> = batmanDb.movieDao().getMovieDetail()
+    fun getMovieDetailsFromDb(imdbID:String?):Flowable<List<MovieDetailModel>> = batmanDb.movieDao().getMovieDetail(imdbID)
 
 }

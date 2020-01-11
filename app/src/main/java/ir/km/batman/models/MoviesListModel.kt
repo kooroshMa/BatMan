@@ -7,8 +7,7 @@ import java.io.Serializable
 
 @Entity
 class MoviesListModel(
-    @PrimaryKey(autoGenerate = true) @SerializedName("id")var id:Int,
-    @SerializedName("Title") var title: String,
+    @PrimaryKey @SerializedName("Title") var title: String,
     @SerializedName("Year") var year: String,
     @SerializedName("imdbID") var imbdID: String,
     @SerializedName("Type") var type: String,

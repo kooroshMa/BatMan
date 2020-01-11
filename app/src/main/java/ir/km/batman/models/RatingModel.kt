@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 class RatingModel(
-    @PrimaryKey(autoGenerate = true)@SerializedName("id") val id:Int,
+    @PrimaryKey
     @SerializedName("Source") val source: String,
     @SerializedName("Value") val value: String
 ) {

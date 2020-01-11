@@ -28,35 +28,39 @@ class MovieDetailViewModel @Inject constructor(
         compositeDisposable.clear()
     }
 
-    fun getExtra(moviesListModel: MoviesListModel?): MoviesListModel? {
+    fun getExtra(moviesListModel: MoviesListModel?) {
         this.moviesListModel = moviesListModel
         getMovieDetail()
-        return moviesListModel
     }
 
 
     fun getMovieDetail(): Disposable {
+        Log.i("joonemadaret" , moviesListModel?.imbdID.toString())
         return appRepository.getMovieDetail(moviesListModel).subscribeOn(Schedulers.io())
             .onBackpressureLatest().subscribe(
                 {
+                    Log.i("joonemadaret" , it.title)
+
                     appRepository.insertMovieDetailsToDb(it)
-                    getMovieDetailsFromDb()
+                    getMovieDetailsFromDb(moviesListModel?.imbdID)
                 },
                 {
 
                     if (it.message.toString().contains("Unable to resolve host")) {
-                        getMovieDetailsFromDb()
+                        getMovieDetailsFromDb(moviesListModel?.imbdID)
                     }
                 }).also { compositeDisposable.add(it) }
     }
 
-    fun getMovieDetailsFromDb(): Disposable {
-        return appRepository.getMovieDetailsFromDb().subscribeOn(Schedulers.io())
+    fun getMovieDetailsFromDb(imdbId:String?): Disposable {
+        return appRepository.getMovieDetailsFromDb(imdbId).subscribeOn(Schedulers.io())
             .onBackpressureLatest().subscribe(
                 {
                     if (it.isEmpty()) {
                         Log.i("No Connection And Data", "Please Connect To Internet")
                     } else {
+                        /*it.forEach { s -> Log.i("whywhywhy" , s.title) }
+                        val s = it.filter { s -> s.title.trim() == moviesListModel?.title?.trim() }*/
                         movieDetailsLiveData.postValue(it[0])
                     }
                 },
